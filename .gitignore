@@ -3,26 +3,26 @@ dist
 database.sqlite
 .env
 .claude/
-# Old duplicate files
+# Old duplicate files (root only: a leading "/" keeps these from matching real files in src/)
 *\ (1)*
 *\ (2)*
-Admin\ (1).tsx
-App\ (1).tsx
-Cart.tsx
-CartContext.tsx
-CategoryProducts.tsx
-Checkout.tsx
-Home.tsx
-ProductDetail.tsx
-env\ (1).example
-gitignore\ (1).txt
-i18n.ts
-index\ (1).css
-index\ (1).html
-main\ (1).tsx
-metadata\ (1).json
-package\ (1).json
-package-lock\ (1).json
-server\ (2).ts
-tsconfig\ (1).json
-vite.config\ (1).ts
+/Admin\ (1).tsx
+/App\ (1).tsx
+/Cart.tsx
+/CartContext.tsx
+/CategoryProducts.tsx
+/Checkout.tsx
+/Home.tsx
+/ProductDetail.tsx
+/env\ (1).example
+/gitignore\ (1).txt
+/i18n.ts
+/index\ (1).css
+/index\ (1).html
+/main\ (1).tsx
+/metadata\ (1).json
+/package\ (1).json
+/package-lock\ (1).json
+/server\ (2).ts
+/tsconfig\ (1).json
+/vite.config\ (1).ts
