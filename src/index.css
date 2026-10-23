@@ -1,1 +1,70 @@
 @import "tailwindcss";
+
+@theme {
+  --font-sans: "Manrope", "Noto Kufi Arabic", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Cormorant Garamond", "Noto Naskh Arabic", ui-serif, Georgia, serif;
+
+  /* Brand palette: ink + ivory with a brass accent */
+  --color-ink: #11100e;
+  --color-ink-2: #1c1a17;
+  --color-ivory: #f6f1e9;
+  --color-linen: #ebe3d5;
+  --color-brass: #c2a06a; /* accent on dark backgrounds */
+  --color-brass-deep: #7a5c2e; /* accent text on light backgrounds */
+  --color-whatsapp: #25d366;
+
+  --ease-luxe: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-curtain: cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    background-color: var(--color-ivory);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    /* clip (not hidden) so position: sticky keeps working */
+    overflow-x: clip;
+  }
+
+  /* Cormorant's default old-style figures make "10" read like "IO"; prices and counts need lining figures. */
+  .font-serif {
+    font-variant-numeric: lining-nums;
+  }
+
+  ::selection {
+    background-color: var(--color-brass);
+    color: var(--color-ink);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@utility no-scrollbar {
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@utility text-outline {
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 1px currentColor;
+}
+
+/* Film-grain texture for dark sections */
+@utility grain {
+  pointer-events: none;
+  opacity: 0.09;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
